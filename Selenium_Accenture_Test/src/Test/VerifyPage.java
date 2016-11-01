@@ -16,7 +16,10 @@ public class VerifyPage {
 	//Name Component, xpath
 	String xpath[][] = {
 			{ "Preços e Prazos", "/html/body/div[2]/div/div[2]/div[2]/div/div/div[2]/div[1]/ul/li[3]/a/img" },
-			{ "Envio", "/html/body/div[2]/div/div[2]/div[2]/div/div/div[1]/div[2]/div/ul/li[1]/div[1]/a" }
+			{ "Envio", "/html/body/div[2]/div/div[2]/div[2]/div/div/div[1]/div[2]/div/ul/li[1]/div[1]/a" },
+			{"Busca CEP", "/html/body/div[2]/div/div[2]/div[2]/div/div/div[2]/div[1]/ul/li[1]/a/img"},
+			{"Rede de Atendimento", "/html/body/div[2]/div/div[2]/div[2]/div/div/div[2]/div[1]/ul/li[4]/a/img"},
+			{"Disque Coleta", "/html/body/div[2]/div/div[2]/div[2]/div/div/div[2]/div[1]/ul/li[8]/a/img"}
 			};
 	
 	public VerifyPage() {
