@@ -5,13 +5,22 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 public class Cart {
-
+	String xpath[][] = { 
+			{"Continue Shopping", ".//*[@id='summary-container']/div[3]/a"},
+			{"Checkout",".//*[@id='formCart']/div[1]/button[2]"},
+			{"PayPal", ".//*[@id='formCart']/div[1]/button[1]"}
+	};
 	public Cart() {
 		
 	}
 	
 	public void getItens(){
 		
+	}
+	
+	public void verifyPage(WebDriver driver){
+		Page page = new Page(xpath);
+		page.verifyComponent(driver);
 	}
 	
 	public float getTotalPrice(WebDriver driver){
@@ -32,7 +41,5 @@ public class Cart {
 		
 		return total;
 	}
-	
-
 
 }

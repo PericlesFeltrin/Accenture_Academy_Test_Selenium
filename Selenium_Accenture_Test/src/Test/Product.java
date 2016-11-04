@@ -23,6 +23,7 @@ public class Product {
 		Page vp = new Page(xpath);
 		driver.findElement(By.xpath(vp.getXpath("Txt Keyword"))).clear();
 		driver.findElement(By.xpath(vp.getXpath("Txt Keyword"))).sendKeys(keyword);
+		log.screenshot(driver);
 		driver.findElement(By.xpath(vp.getXpath("Search"))).click();
 	}
 
@@ -43,18 +44,21 @@ public class Product {
 	public void addCart(WebDriver driver){		
 		WebElement element = driver.findElement(By.xpath(".//*[@id='btn-add-to-cart']"));
 		log.setNewLog("Product.addCart", "Add product to cart");
+		log.screenshot(driver);
 		element.click();
 	}
 	
 	public void addList(WebDriver driver){		
 		WebElement element = driver.findElement(By.xpath("html/body/div[4]/div/div[2]/div[1]/div[1]/div[2]/div[2]/a[2]"));
 		log.setNewLog("Product.addList", "Add product to list");
+		log.screenshot(driver);
 		element.click();
 	}
 		
-	public void openProduct(WebDriver driver){		
+	public void openProduct(WebDriver driver){
 		WebElement element = driver.findElement(By.xpath(".//*[@id='content_ProductList1_rpProducts_lnkShortHeadLine1_0']"));
 		log.setNewLog("Product.openProduct", "Open Product: " + element.getText());
+		log.screenshot(driver);
 		element.click();
 	}
 	

@@ -30,14 +30,13 @@ public class Test {
 
 		// driver.findElement(By.xpath(page.getXpath("Cart"))).click();
 		// driver.findElement(By.xpath(page.getXpath(".//*[@id='cart-login']"))).click();
-
+		
 		Login login = new Login("jogol@bol.com.br", "teste123-");
 		login.setSignIn(driver);
 		if (!login.verifyLogin(driver)) {
 			log.setNewLog("Test.cart", "Error Login. Close test.");
 			return;
 		}
-
 		page.verifyComponent(driver);
 
 		Product product = new Product();
@@ -47,7 +46,9 @@ public class Test {
 		float totalPrice = 0;
 		for (int i = 0; i < keywordProduct.size(); i++) {
 			product.setSearchProduct(driver, keywordProduct.get(i));
+			log.screenshot(driver);
 			product.openProduct(driver);
+			log.screenshot(driver);
 			log.setNewLog("Test.cart", "Switch page");
 
 			tabs.clear();
@@ -71,9 +72,10 @@ public class Test {
 
 		driver.findElement(By.xpath(page.getXpath("Cart"))).click();
 		log.setNewLog("Test.cart", "Open Page: " + driver.getTitle());
+		log.screenshot(driver);
 
 		Cart cart = new Cart();
-
+		cart.verifyPage(driver);
 		if (totalPrice == cart.getTotalPrice(driver)) {
 			log.setNewLog("Test.cart", "Cart price total OK. " + totalPrice + " = " + cart.getTotalPrice(driver));
 		} else {
@@ -89,6 +91,7 @@ public class Test {
 		Log log = new Log();
 		log.setNewLog("Test.wishList", "Start Test in Dx.com");
 		driver.get("http://www.dx.com/");
+		driver.manage().window().maximize();
 
 		log.setNewLog("Test.wishList", "Open Page: " + driver.getTitle());
 		log.setNewLog("Test.wishList", "Start Verify Page Component");

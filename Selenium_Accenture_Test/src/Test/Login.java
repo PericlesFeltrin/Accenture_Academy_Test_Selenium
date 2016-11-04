@@ -32,19 +32,20 @@ public class Login {
 	
 	private void signIn(WebDriver driver){
 		Log log = new Log();
-		Page vp;
+		Page page;
 		if (driver.getTitle().equals("DX Account Login")) {
 			log.setNewLog("Login.signIn", "Open Page, title is: " + driver.getTitle());
-			vp = new Page(xpath_login);			
+			page = new Page(xpath_login);			
 		}else{
 			log.setNewLog("Login.signIn", "Open Page, title is: " + driver.getTitle());
-			vp = new Page(xpath_login_car);		
+			page = new Page(xpath_login_car);		
 		}
-		vp.verifyComponent(driver);
+		page.verifyComponent(driver);
 		log.setNewLog("Login.signIn", "Login...");
-		driver.findElement(By.xpath(vp.getXpath("Email"))).sendKeys(username);
-		driver.findElement(By.xpath(vp.getXpath("Password"))).sendKeys(password);
-		driver.findElement(By.xpath(vp.getXpath("Sign In"))).submit();
+		driver.findElement(By.xpath(page.getXpath("Email"))).sendKeys(username);
+		driver.findElement(By.xpath(page.getXpath("Password"))).sendKeys(password);
+		log.screenshot(driver);
+		driver.findElement(By.xpath(page.getXpath("Sign In"))).submit();
 		log.setNewLog("Login.signIn", "Username: "+username+" Password: "+password);
 	}
 	
