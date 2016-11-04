@@ -24,9 +24,10 @@ public class Log {
 	SimpleDateFormat dateFormatFileLog = new SimpleDateFormat("'Date'_d-MM-yyyy");
 	Charset charset = Charset.forName("UTF-8");
 	File file;
+	String path = "/Users/periclesfeltrin/Desktop/Accenture/Accenture_Academy_Test_Selenium/Log/";//"../../../Log/";
 	
 	public Log() {
-		file = new File("/Users/periclesfeltrin/Desktop/Accenture/Accenture_Academy_Test_Selenium/Log/" + dateFormatFileLog.format(Calendar.getInstance().getTime())  + ".log");
+		file = new File(path + dateFormatFileLog.format(Calendar.getInstance().getTime())  + ".log");
 	}
 	
 	public void setNewLog(String c, String desciption){
@@ -42,9 +43,10 @@ public class Log {
 			BufferedWriter bw = new BufferedWriter(fw);
 			bw.append(logMenssage+"\n");
 			bw.close();
+			System.out.println("[Log.setNewLog] Export Log Sucess");	
 
 		} catch (Exception e) {
-			
+			System.out.println("[Log.setNewLog] Error Export Log");			
 		}
 		
 	}
@@ -55,7 +57,7 @@ public class Log {
 		String nameFile = dateFormatFile.format(Calendar.getInstance().getTime());
 		// Now you can do whatever you need to do with it, for example copy somewhere
 		try {
-			FileUtils.copyFile(scrFile, new File("/Users/periclesfeltrin/Desktop/Accenture/Accenture_Academy_Test_Selenium/Log/"+ nameFile +".png"));
+			FileUtils.copyFile(scrFile, new File(path + nameFile +".png"));
 			setNewLog("Log.screenshot", "Sucess screenshot");
 		} catch (IOException e) {
 			setNewLog("Log.screenshot", "Error screenshot");
