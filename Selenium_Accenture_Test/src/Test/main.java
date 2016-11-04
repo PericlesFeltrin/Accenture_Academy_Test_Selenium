@@ -23,7 +23,8 @@ public class main {
 		//WebDriver driver = new OperaDriver();
 		
 		Test test = new Test();
-		
+
+		//Keywords list to search products
 		ArrayList<String> keywordsProduct = new ArrayList<String>();
 		keywordsProduct.addAll(Arrays.asList("Xiaomi", "Iphone"));
 		

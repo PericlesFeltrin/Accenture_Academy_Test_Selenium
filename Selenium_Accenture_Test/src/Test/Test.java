@@ -30,9 +30,6 @@ public class Test {
 		page.verifyComponent(driver);
 		driver.findElement(By.xpath(page.getXpath("Login"))).click();
 		log.setNewLog("Test.cart", "Open Page: " + driver.getTitle());
-
-		// driver.findElement(By.xpath(page.getXpath("Cart"))).click();
-		// driver.findElement(By.xpath(page.getXpath(".//*[@id='cart-login']"))).click();
 		
 		Login login = new Login("jogol@bol.com.br", "teste123-");
 		login.setSignIn(driver);
