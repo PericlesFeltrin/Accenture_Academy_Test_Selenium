@@ -53,23 +53,23 @@ git clone https://github.com/PericlesFeltrin/Accenture_Academy_Test_Selenium
 #### Teste
 - [Test.cart] Teste para verificar se o preço dos produtos adicionados estão corretos
   - Acessar a página dx.com
-  - Realiza o login
+  - Realizar o login
   - Loop(1 vez, n vezes)
-    - Busca o produto
+    - Buscar o produto
     - Abrir o produto
     - Adicionar o produto no carrinho de compras
-  - Abre o carrinho de compras
-  - Verifica os valores do carrinho com o dos produtos adicionados
+  - Abrir o carrinho de compras
+  - Verificar os valores do carrinho com o dos produtos adicionados
 
 - [Test.wishList] Teste para verificar se os produtos foram adicionados na lista de desejos
   - Acessar a página dx.com
-  - Realiza o login
-  - Loop
-    - Busca o(s) produto(s)
+  - Realizar o login
+  - Loop(1 vez, n vezes)
+    - Buscar o(s) produto(s)
     - Adicionar o produto a lista de desejos
-  - Acessa a página da lista de desejos
-  - Verifica se foi adicionado corretamente os produtos na lista de deseejos
-  
+  - Acessar a página da lista de desejos
+  - Verificar se foi adicionado corretamente os produtos na lista de deseejos
+
 
 
 
