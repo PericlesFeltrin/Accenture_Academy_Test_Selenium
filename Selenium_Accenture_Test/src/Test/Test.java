@@ -6,7 +6,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 public class Test {
-
+	long startTime, finishTime;
+	 
 	public Test() {
 
 	}
@@ -15,6 +16,8 @@ public class Test {
 
 		ArrayList<String> tabs = new ArrayList<String>();
 		Log log = new Log();
+		
+		startTime = System.currentTimeMillis();
 		log.setNewLog("Test.Cart", "Start Test in Dx.com");
 		driver.get("http://www.dx.com/");
 		driver.manage().window().maximize();
@@ -83,6 +86,7 @@ public class Test {
 					"ERROR Cart price total Fail." + totalPrice + " <> " + cart.getTotalPrice(driver));
 		}
 		driver.quit();
+		
 	}
 
 	public void wishList(WebDriver driver, ArrayList<String> keywordProduct) {
@@ -90,6 +94,7 @@ public class Test {
 		ArrayList<String> tabs = new ArrayList<String>();
 		Log log = new Log();
 		log.setNewLog("Test.wishList", "Start Test in Dx.com");
+		startTime = System.currentTimeMillis();
 		driver.get("http://www.dx.com/");
 		driver.manage().window().maximize();
 
@@ -145,6 +150,8 @@ public class Test {
 		}
 		
 		driver.quit();
+		finishTime = System.currentTimeMillis();
+		log.setNewLog("Test.cart", "Runtime: " + (finishTime - startTime) + "ms");
 	}
 
 }

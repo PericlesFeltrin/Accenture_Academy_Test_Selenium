@@ -65,7 +65,8 @@ git clone https://github.com/PericlesFeltrin/Accenture_Academy_Test_Selenium
   - Acessar a página dx.com
   - Realizar o login
   - Loop(1 vez, n vezes)
-    - Buscar o(s) produto(s)
+    - Buscar o produto
+    - Abrir o produto
     - Adicionar o produto a lista de desejos
   - Acessar a página da lista de desejos
   - Verificar se foi adicionado corretamente os produtos na lista de deseejos
