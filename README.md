@@ -7,7 +7,7 @@ Criar 2 Cenários de teste automatizado que valide a aplicação escolhida utili
 
 - REQUERIDO
     - Componentizar partes relevantes do cenário.
-    - Criar estrutura de dados para controle das entras de saídas.
+    - Criar estrutura de dados para controle das entradas e saídas de dados.
     - Logs das execuções com resultados esperados e atuais.
     - Dados de saída e resultados nos logs.
     - Validar fluxos principais, fluxos de exceção e estruturas de layout.
@@ -25,7 +25,7 @@ Criar 2 Cenários de teste automatizado que valide a aplicação escolhida utili
 
 - ESTRELINHA
     - Criar script para controle da execução dos Scripts (número de repetições e controle de resultados)
-    - Externalizar dados e entrada e saída ( Excel, .txt, etc )
+    - Externalizar dados e entrada e saída (Excel, .txt, etc)
     - Validar tempo de respostas das transações.
     - Criar evidências com relatório HTML contendo prints de telas e tempos de execução.
     - Parametrizar execuções em múltiplos browsers.
